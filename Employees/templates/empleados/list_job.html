@@ -1,0 +1,22 @@
+<h1>Lista de personas segun su trabajo</h1>
+{{ object_list }}
+
+<p>hay 4 tipos de trabajo en esta empresa:</p>
+<ul>
+    <li>Para Contador usa 0</li>
+    <li>Para Administrador usa 1</li>
+    <li>Para Economista usa 2</li>
+    <li>Para Computación usa 3</li>
+</ul>
+
+<p>Los empleados que tienen este trabajo son:</p>
+
+<ul>
+    
+    {% for i in object_list %}
+    
+        <li>{{i}}</li>
+        
+    {% endfor %}
+        
+</ul>

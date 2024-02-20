@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Agregar nuevo departamento
+{% endblock title %}
+
+{% block content %}
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-6">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="fieldset">
+                    <legend>Datos del empleado</legend>
+                    <div class="grid-x grid-padding-x">
+                        <div class="medium-6 cell">
+                            <label>Nombre
+                                {{ form.Nombre }}
+                            </label>
+                        </div>
+                        <div class="medium-6 cell">
+                            <label>Apellidos
+                                {{ form.Apellidos }}
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="fieldset">
+                    <legend>Datos del departamento</legend>
+                    <div class="grid-x grid-padding-x">
+                        <div class="medium-6 cell">
+                            <label>Departamento
+                                {{ form.departamento }}
+                            </label>
+                        </div>
+                        <div class="medium-6 cell">
+                            <label>Nombre corto
+                                {{ form.Shorname }}
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit" class="button">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

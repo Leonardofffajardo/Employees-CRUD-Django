@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Detalles del Empleado</h1>
+        <div class="cell">
+            <table>
+                <thead>
+                  <tr>
+                    <th width="200">ID</th>
+                    <th>Nombres</th>
+                    <th width="150">Apellidos</th>
+                    <th width="150">Departamento</th>
+                    <th width="150">Trabajo</th>
+                    <th width="150">Habilidades</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{empleado.id}}</td>
+                        <td>{{empleado.first_name}}</td>
+                        <td>{{empleado.last_name}}</td>
+                        <td>{{empleado.departamento}}</td>
+                        <td>{{empleado.get_job_display}}</td>
+                        <td>{% for habilidad in empleado.habilidades.all %}{{ habilidad.habilidad }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+                  </tr> 
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
